@@ -7,7 +7,7 @@ import project.infra.AbstractEvent;
 
 @Data
 @ToString
-public class OrderCanceled extends AbstractEvent {
+public class OrderPaid extends AbstractEvent {
 
     private Long id;
     private String storeId;
@@ -15,12 +15,4 @@ public class OrderCanceled extends AbstractEvent {
     private String customerId;
     private String address;
     private String status;
-
-    public OrderCanceled(Order aggregate) {
-        super(aggregate);
-    }
-
-    public OrderCanceled() {
-        super();
-    }
 }

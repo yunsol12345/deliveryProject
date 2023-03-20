@@ -10,11 +10,12 @@ import project.config.kafka.KafkaProcessor;
 @SpringBootApplication
 @EnableBinding(KafkaProcessor.class)
 @EnableFeignClients
-public class PayApplication {
+public class PaymentApplication {
 
     public static ApplicationContext applicationContext;
 
     public static void main(String[] args) {
-        applicationContext = SpringApplication.run(PayApplication.class, args);
+        applicationContext =
+            SpringApplication.run(PaymentApplication.class, args);
     }
 }

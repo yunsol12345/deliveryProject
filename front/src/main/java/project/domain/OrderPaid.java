@@ -7,7 +7,7 @@ import project.infra.AbstractEvent;
 
 @Data
 @ToString
-public class Paid extends AbstractEvent {
+public class OrderPaid extends AbstractEvent {
 
     private Long id;
     private String storeId;
@@ -16,11 +16,11 @@ public class Paid extends AbstractEvent {
     private String address;
     private String status;
 
-    public Paid(Order aggregate) {
+    public OrderPaid(Order aggregate) {
         super(aggregate);
     }
 
-    public Paid() {
+    public OrderPaid() {
         super();
     }
 }

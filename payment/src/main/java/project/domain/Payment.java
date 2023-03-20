@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
 import lombok.Data;
-import project.PayApplication;
+import project.PaymentApplication;
 import project.domain.PaymentPaid;
 
 @Entity
@@ -27,7 +27,7 @@ public class Payment {
     }
 
     public static PaymentRepository repository() {
-        PaymentRepository paymentRepository = PayApplication.applicationContext.getBean(
+        PaymentRepository paymentRepository = PaymentApplication.applicationContext.getBean(
             PaymentRepository.class
         );
         return paymentRepository;
