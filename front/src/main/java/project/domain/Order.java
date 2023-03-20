@@ -18,9 +18,9 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String storeId;
+    private Long storeId;
 
-    private String foodId;
+    private Long foodId;
 
     private String customerId;
 
@@ -48,22 +48,12 @@ public class Order {
     }
 
     public static void paid(PaymentPaid paymentPaid) {
-        /** Example 1:  new item 
-        Order order = new Order();
-        repository().save(order);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(paymentPaid.get???()).ifPresent(order->{
-            
-            order // do something
+           repository().findById(paymentPaid.getOrderId()).ifPresent(order->{
+            order.setStatus("PAID");
             repository().save(order);
 
-
-         });
-        */
+            OrderPaid orderPaid = new OrderPaid(order);
+            orderPaid.publishAfterCommit();
 
     }
 }

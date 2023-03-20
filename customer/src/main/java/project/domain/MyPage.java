@@ -11,9 +11,9 @@ import lombok.Data;
 public class MyPage {
 
     @Id
-    //@GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
-    private String orderId;
+    private Long orderId;
     private String status;
 }

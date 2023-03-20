@@ -6,4 +6,6 @@ import project.domain.*;
 
 @RepositoryRestResource(collectionResourceRel = "payments", path = "payments")
 public interface PaymentRepository
-    extends PagingAndSortingRepository<Payment, Long> {}
+    extends PagingAndSortingRepository<Payment, Long> {
+
+    Optional<Payment> findByOrderId(Long orderId);}
